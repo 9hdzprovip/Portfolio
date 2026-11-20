@@ -233,6 +233,13 @@
     }
     @keyframes iconSpin { from { transform: rotate(-90deg) scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
     #themeIcon { display: inline-block; animation: iconSpin .45s cubic-bezier(0.16,1,0.3,1); }
+
+    /* About section */
+    .about-hl { background: linear-gradient(120deg, rgb(var(--c-primary-container) / .28), rgb(var(--c-secondary) / .22)); background-repeat: no-repeat; background-size: 0% 38%; background-position: 0 88%; transition: background-size 1.2s cubic-bezier(0.16,1,0.3,1) .5s; padding: 0 2px; }
+    .in .about-hl, .about-hl.on { background-size: 100% 38%; }
+    .about-link { color: rgb(var(--c-text-primary)); font-weight: 600; text-decoration: none; background-image: linear-gradient(90deg, #6C8CFF, #8B5CF6); background-size: 100% 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s, color .2s; }
+    .about-link:hover { color: rgb(var(--c-primary)); background-size: 100% 2px; }
+    .about-icon { width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; color: rgb(var(--c-primary)); background: rgb(var(--c-primary-container) / .12); border: 1px solid rgb(var(--c-primary-container) / .25); }
     :focus-visible { outline: 2px solid #6C8CFF; outline-offset: 3px; border-radius: 8px; }
     /* ---- Motion system ---- */
     @keyframes rise { from { opacity: 0; transform: perspective(1000px) rotateX(14deg) translateY(56px) scale(.96); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
@@ -486,33 +493,91 @@
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Building a strong foundation in backend engineering.</h2>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-<!-- Text Card (8 cols) -->
-<div class="lg:col-span-8 glass-panel p-6 sm:p-8 space-y-5 text-text-secondary font-body-md text-body-md leading-relaxed">
-<p>
-            I am a Computer Science student at Hanoi University of Science and Technology, pursuing a career in Java Backend Development. I enjoy turning business requirements into structured, maintainable applications and learning how reliable backend systems are designed, secured, and deployed.
-          </p>
-<p>
-            Through academic and personal projects, I have worked with Spring Boot, Spring Data JPA, Spring Security, JWT authentication, PostgreSQL, MySQL, RESTful APIs, and React. I am currently strengthening my knowledge of Docker, microservices, CI/CD, and event-driven systems.
-          </p>
-<div class="pt-4 flex flex-wrap items-center gap-3">
-<span class="font-code-xs text-code-xs text-text-muted uppercase">Academic Track:</span>
-<span class="chip font-code-xs text-code-xs text-primary">HUST School of ICT</span>
-<span class="chip font-code-xs text-code-xs text-status-available">Open to Intern / Fresher roles</span>
+<!-- Story -->
+<div class="lg:col-span-8 glass-panel p-6 sm:p-10 flex flex-col gap-8">
+<div class="space-y-5">
+<p class="font-headline-sm text-[22px] sm:text-[26px] leading-[1.45] text-text-primary tracking-tight">
+I turn business requirements into <span class="about-hl">clean, well-structured backend systems</span> — APIs that are secure, easy to reason about and pleasant for the next developer to maintain.
+</p>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+I'm a Computer Science student at <a class="about-link" href="https://hust.edu.vn" rel="noopener noreferrer" target="_blank">Hanoi University of Science and Technology</a>. Most of my work lives on the server side with <b class="text-text-primary font-semibold">Java 17</b> and <b class="text-text-primary font-semibold">Spring Boot 3</b>: I've built the REST API for an <a class="about-link" href="#projects">employee management system</a> with attendance, payroll and Excel import, and for a residential management system with JWT authentication and role-based access for admins, team leaders and accountants.
+</p>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+Right now I'm going deeper into <b class="text-text-primary font-semibold">Docker</b>, <b class="text-text-primary font-semibold">microservices</b> and <b class="text-text-primary font-semibold">Kafka</b>, and experimenting with connecting LLMs to backend services through tool calling and MCP.
+</p>
+</div>
+<!-- Principles -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-border-subtle mt-auto">
+<div class="space-y-2">
+<span class="about-icon"><span class="material-symbols-outlined text-[20px]">account_tree</span></span>
+<h3 class="font-label-md text-[15px] font-semibold text-text-primary">Layered architecture</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Controller / Service / Repository with clear responsibilities.</p>
+</div>
+<div class="space-y-2">
+<span class="about-icon"><span class="material-symbols-outlined text-[20px]">database</span></span>
+<h3 class="font-label-md text-[15px] font-semibold text-text-primary">Data modelling first</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Normalized PostgreSQL schemas and queries tuned for reporting.</p>
+</div>
+<div class="space-y-2">
+<span class="about-icon"><span class="material-symbols-outlined text-[20px]">shield_lock</span></span>
+<h3 class="font-label-md text-[15px] font-semibold text-text-primary">Secure by default</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Stateless JWT auth and role-based access with Spring Security.</p>
 </div>
 </div>
-<!-- 3 Compact Stat Cards (4 cols stacked) -->
-<div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
-<div class="glass-panel p-5 flex flex-col justify-center">
-<span class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">02+</span>
-<span class="font-label-md text-label-md text-text-secondary mt-1">Full-stack Projects</span>
 </div>
-<div class="glass-panel p-5 flex flex-col justify-center">
-<span class="font-headline-lg text-headline-lg text-tertiary-fixed-dim font-bold tracking-tight">Java</span>
-<span class="font-label-md text-label-md text-text-secondary mt-1">Primary Language</span>
+<!-- Facts -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="glass-panel p-6 sm:p-7">
+<span class="font-eyebrow text-eyebrow text-text-muted tracking-wider uppercase">At a glance</span>
+<dl class="grid grid-cols-2 gap-x-4 gap-y-6 mt-5">
+<div>
+<dt class="sr-only">GPA</dt>
+<dd class="font-headline-lg text-[36px] leading-none font-bold text-text-primary tracking-tight"><span data-count="3.74" data-decimals="2">3.74</span><span class="text-text-muted text-[18px] font-semibold">/4</span></dd>
+<dd aria-hidden="true" class="mt-2 font-label-md text-label-md text-text-secondary">GPA at HUST</dd>
 </div>
-<div class="glass-panel p-5 flex flex-col justify-center">
-<span class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight">HUST</span>
-<span class="font-label-md text-label-md text-text-secondary mt-1">Computer Science</span>
+<div>
+<dt class="sr-only">Backend projects</dt>
+<dd class="font-headline-lg text-[36px] leading-none font-bold text-text-primary tracking-tight"><span data-count="3">3</span></dd>
+<dd aria-hidden="true" class="mt-2 font-label-md text-label-md text-text-secondary">Backend projects built</dd>
+</div>
+<div>
+<dt class="sr-only">Scholarships</dt>
+<dd class="font-headline-lg text-[36px] leading-none font-bold text-text-primary tracking-tight"><span data-count="2">2</span><span class="text-primary">×</span></dd>
+<dd aria-hidden="true" class="mt-2 font-label-md text-label-md text-text-secondary">Academic scholarships</dd>
+</div>
+<div>
+<dt class="sr-only">English</dt>
+<dd class="font-headline-lg text-[36px] leading-none font-bold text-text-primary tracking-tight">B1</dd>
+<dd aria-hidden="true" class="mt-2 font-label-md text-label-md text-text-secondary">English (VSTEP)</dd>
+</div>
+</dl>
+<div class="flex items-center gap-3 mt-6 pt-5 border-t border-border-subtle">
+<span class="about-icon shrink-0"><span class="material-symbols-outlined text-[20px]">workspace_premium</span></span>
+<div><p class="font-label-md text-[15px] font-semibold text-text-primary">Outstanding Student 2024–2025</p>
+<p class="font-body-sm text-body-sm text-text-secondary">Hanoi University of Science and Technology</p></div>
+</div>
+</div>
+<div class="glass-panel p-6 sm:p-7 flex-1 flex flex-col gap-5">
+<span class="font-eyebrow text-eyebrow text-text-muted tracking-wider uppercase">Now</span>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="about-icon shrink-0"><span class="material-symbols-outlined text-[20px]">construction</span></span>
+<div><p class="font-label-md text-[15px] font-semibold text-text-primary">Building</p>
+<p class="font-body-sm text-body-sm text-text-secondary">A chat app that answers data questions through LLM tool calling and MCP.</p></div>
+</li>
+<li class="flex items-start gap-3">
+<span class="about-icon shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></span>
+<div><p class="font-label-md text-[15px] font-semibold text-text-primary">Learning</p>
+<p class="font-body-sm text-body-sm text-text-secondary">Docker, microservices and event-driven systems with Kafka.</p></div>
+</li>
+</ul>
+<div class="flex items-center justify-between gap-3 pt-5 border-t border-border-subtle mt-auto">
+<span class="inline-flex items-center gap-2 font-code-xs text-code-xs text-status-available uppercase tracking-wider">
+<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-available opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-status-available"></span></span>
+Open to work
+</span>
+<a class="font-label-md text-label-md text-primary hover:underline inline-flex items-center gap-1 shrink-0" href="#contact">Get in touch <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
 </div>
 </div>
 </div>
@@ -1337,6 +1402,24 @@
       }
       requestAnimationFrame(loop);
     })();
+
+
+    // Count-up numbers when visible
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        countObserver.unobserve(e.target);
+        const el = e.target, end = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0);
+        if (reduceMotion) return;
+        const t0 = performance.now(), dur = 1400;
+        (function step(t) {
+          const k = Math.min(1, (t - t0) / dur), v = end * (1 - Math.pow(1 - k, 4));
+          el.textContent = v.toFixed(dec);
+          if (k < 1) requestAnimationFrame(step); else el.textContent = end.toFixed(dec);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(el));
 
     // Terminal line types once on load
     const typeEl = document.getElementById('typeTarget');
