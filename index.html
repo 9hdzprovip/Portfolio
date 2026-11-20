@@ -240,6 +240,15 @@
     .about-link { color: rgb(var(--c-text-primary)); font-weight: 600; text-decoration: none; background-image: linear-gradient(90deg, #6C8CFF, #8B5CF6); background-size: 100% 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s, color .2s; }
     .about-link:hover { color: rgb(var(--c-primary)); background-size: 100% 2px; }
     .about-icon { width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; color: rgb(var(--c-primary)); background: rgb(var(--c-primary-container) / .12); border: 1px solid rgb(var(--c-primary-container) / .25); }
+
+    /* tech icons */
+    .skill-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px 5px 9px; }
+    .skill-ico { width: 16px; height: 16px; flex: none; transition: transform .25s cubic-bezier(0.16,1,0.3,1); }
+    .skill-ico-m { font-size: 16px !important; color: rgb(var(--c-primary)); transition: transform .25s cubic-bezier(0.16,1,0.3,1); }
+    html:not(.light) .skill-ico-mono { filter: invert(1) brightness(1.6); }
+    html:not(.light) .skill-ico-lift { filter: brightness(1.9) saturate(1.2); }
+    .skill-chip:hover .skill-ico, .skill-chip:hover .skill-ico-m { transform: scale(1.22) rotate(-6deg); }
+    .skill-chip:hover { color: rgb(var(--c-text-primary)); }
     :focus-visible { outline: 2px solid #6C8CFF; outline-offset: 3px; border-radius: 8px; }
     /* ---- Motion system ---- */
     @keyframes rise { from { opacity: 0; transform: perspective(1000px) rotateX(14deg) translateY(56px) scale(.96); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
@@ -604,15 +613,17 @@ Open to work
 <span class="font-code-xs text-code-xs text-primary bg-primary/10 px-2.5 py-1 rounded-md hidden sm:inline-block">Primary Focus</span>
 </div>
 <div class="flex flex-wrap gap-2.5 font-code-sm text-code-sm">
-<span class="chip text-text-primary border-primary/30 bg-primary/5 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Java</span>
-<span class="chip text-text-primary border-primary/30 bg-primary/5 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Spring Boot</span>
-<span class="chip text-text-secondary">Spring MVC</span>
-<span class="chip text-text-secondary">Spring Security</span>
-<span class="chip text-text-secondary">Spring Data JPA</span>
-<span class="chip text-text-secondary">Hibernate</span>
-<span class="chip text-text-secondary">RESTful API</span>
-<span class="chip text-text-secondary">JWT Authentication</span>
-<span class="chip text-text-secondary">Maven</span>
+<span class="chip text-text-primary border-primary/30 bg-primary/5 skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/java.svg" width="16"/><span>Java</span></span>
+<span class="chip text-text-primary border-primary/30 bg-primary/5 skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/spring.svg" width="16"/><span>Spring Boot</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/spring.svg" width="16"/><span>Spring MVC</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/springsecurity.svg" width="16"/><span>Spring Security</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/spring.svg" width="16"/><span>Spring Data JPA</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/hibernate.svg" width="16"/><span>Hibernate</span></span>
+<span class="chip text-text-secondary skill-chip"><span aria-hidden="true" class="material-symbols-outlined skill-ico-m">api</span><span>RESTful API</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/jsonwebtokens.svg" width="16"/><span>JWT Authentication</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/maven.svg" width="16"/><span>Maven</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico skill-ico-mono" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/gradle.svg" width="16"/><span>Gradle</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/swagger.svg" width="16"/><span>Swagger</span></span>
 </div>
 <div class="text-text-muted font-code-xs text-code-xs flex items-center gap-2 pt-2">
 <span class="material-symbols-outlined text-[16px] text-text-muted">memory</span>
@@ -632,10 +643,11 @@ Open to work
 </div>
 </div>
 <div class="flex flex-wrap gap-2.5 font-code-sm text-code-sm mt-6">
-<span class="chip text-text-primary border-tertiary/30">PostgreSQL</span>
-<span class="chip text-text-primary border-tertiary/30">MySQL</span>
-<span class="chip text-text-secondary">SQL</span>
-<span class="chip text-text-secondary">Database Design</span>
+<span class="chip text-text-primary border-tertiary/30 skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/postgresql.svg" width="16"/><span>PostgreSQL</span></span>
+<span class="chip text-text-primary border-tertiary/30 skill-chip"><img alt="" aria-hidden="true" class="skill-ico skill-ico-lift" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/mysql.svg" width="16"/><span>MySQL</span></span>
+<span class="chip text-text-primary border-tertiary/30 skill-chip"><img alt="" aria-hidden="true" class="skill-ico skill-ico-lift" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/microsoftsqlserver.svg" width="16"/><span>SQL Server</span></span>
+<span class="chip text-text-secondary skill-chip"><span aria-hidden="true" class="material-symbols-outlined skill-ico-m">terminal</span><span>SQL</span></span>
+<span class="chip text-text-secondary skill-chip"><span aria-hidden="true" class="material-symbols-outlined skill-ico-m">schema</span><span>Database Design</span></span>
 </div>
 </div>
 <p class="font-body-sm text-body-sm text-text-muted">Relational schemas, constraints, indexing, and transactional isolation.</p>
@@ -653,11 +665,11 @@ Open to work
 </div>
 </div>
 <div class="flex flex-wrap gap-2.5 font-code-sm text-code-sm mt-6">
-<span class="chip text-text-secondary">React</span>
-<span class="chip text-text-secondary">JavaScript</span>
-<span class="chip text-text-secondary">HTML</span>
-<span class="chip text-text-secondary">CSS</span>
-<span class="chip text-text-secondary">Vite</span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/react.svg" width="16"/><span>React</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/javascript.svg" width="16"/><span>JavaScript</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/html5.svg" width="16"/><span>HTML</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/css3.svg" width="16"/><span>CSS</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/vitejs.svg" width="16"/><span>Vite</span></span>
 </div>
 </div>
 <p class="font-body-sm text-body-sm text-text-muted">Component-driven dashboards, asynchronous state &amp; responsive layouts.</p>
@@ -675,12 +687,12 @@ Open to work
 </div>
 </div>
 <div class="flex flex-wrap gap-2.5 font-code-sm text-code-sm mt-6">
-<span class="chip text-text-secondary">Git</span>
-<span class="chip text-text-secondary">GitHub</span>
-<span class="chip text-text-secondary">Postman</span>
-<span class="chip text-text-secondary">IntelliJ IDEA</span>
-<span class="chip text-text-secondary">VS Code</span>
-<span class="chip text-text-secondary">Linux</span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/git.svg" width="16"/><span>Git</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico skill-ico-mono" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/github.svg" width="16"/><span>GitHub</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/postman.svg" width="16"/><span>Postman</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/intellij.svg" width="16"/><span>IntelliJ IDEA</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/vscode.svg" width="16"/><span>VS Code</span></span>
+<span class="chip text-text-secondary skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/linux.svg" width="16"/><span>Linux</span></span>
 </div>
 </div>
 <p class="font-body-sm text-body-sm text-text-muted">Version control, API test suites, and Unix shell proficiency.</p>
@@ -704,10 +716,10 @@ Open to work
 </span>
 </div>
 <div class="flex flex-wrap gap-2.5 font-code-sm text-code-sm mt-6">
-<span class="chip text-text-primary border-status-available/30 bg-status-available/5">Docker</span>
-<span class="chip text-text-primary border-status-available/30 bg-status-available/5">Microservices</span>
-<span class="chip text-text-primary border-status-available/30 bg-status-available/5">Kafka</span>
-<span class="chip text-text-primary border-status-available/30 bg-status-available/5">CI/CD</span>
+<span class="chip text-text-primary border-status-available/30 bg-status-available/5 skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/docker.svg" width="16"/><span>Docker</span></span>
+<span class="chip text-text-primary border-status-available/30 bg-status-available/5 skill-chip"><span aria-hidden="true" class="material-symbols-outlined skill-ico-m">hub</span><span>Microservices</span></span>
+<span class="chip text-text-primary border-status-available/30 bg-status-available/5 skill-chip"><img alt="" aria-hidden="true" class="skill-ico skill-ico-mono" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/apachekafka.svg" width="16"/><span>Kafka</span></span>
+<span class="chip text-text-primary border-status-available/30 bg-status-available/5 skill-chip"><img alt="" aria-hidden="true" class="skill-ico" decoding="async" height="16" loading="lazy" onerror="this.remove()" src="assets/icons/githubactions.svg" width="16"/><span>CI/CD</span></span>
 </div>
 </div>
 <p class="font-body-sm text-body-sm text-text-muted">Containerizing Spring microservices and event-driven message queues.</p>
