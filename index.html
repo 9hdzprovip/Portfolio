@@ -4,10 +4,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Le Duc Chinh — Java Backend Developer Portfolio</title>
+<meta name="description" content="Le Duc Chinh — Computer Science student at HUST building backend applications with Java, Spring Boot, REST APIs and PostgreSQL. Open to Java Backend Intern / Fresher roles in Hanoi."/>
+<meta name="author" content="Le Duc Chinh"/>
+<meta name="theme-color" content="#080A0F"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Le Duc Chinh — Java Backend Developer"/>
+<meta property="og:description" content="Java · Spring Boot · REST APIs · PostgreSQL. Open to Java Backend Intern / Fresher roles in Hanoi."/>
+<meta property="og:url" content="https://9hdzprovip.bbroot.com/"/>
+<meta property="og:image" content="https://github.com/9hdzprovip.png"/>
+<link rel="canonical" href="https://9hdzprovip.bbroot.com/"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236C8CFF'/%3E%3Cstop offset='1' stop-color='%238B5CF6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='white' text-anchor='middle'%3ELDC%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -171,6 +180,17 @@
       border-radius: 6px;
       padding: 4px 10px;
     }
+    :focus-visible { outline: 2px solid #6C8CFF; outline-offset: 3px; border-radius: 8px; }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .nav-link.active { color: #b6c4ff; }
+    .arch-node { background: #151C29; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 14px; }
+    .arch-arrow { width: 1px; height: 18px; margin: 0 auto; background: linear-gradient(#6C8CFF, #8B5CF6); }
+    #caseModal[hidden], #mobileMenu[hidden] { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body class="bg-[#080A0F] text-text-primary selection:bg-primary selection:text-on-primary font-body-md text-body-md antialiased min-h-screen relative overflow-x-hidden">
@@ -186,25 +206,36 @@
 <span class="font-headline-sm text-headline-sm font-bold text-text-primary dark:text-text-primary hidden sm:inline-block">Le Duc Chinh</span>
 </a>
 <!-- Desktop Nav -->
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-primary dark:text-primary font-label-md text-label-md transition-colors duration-200" href="#home">Home</a>
-<a class="text-text-secondary dark:text-text-secondary font-label-md text-label-md hover:text-text-primary dark:hover:text-text-primary transition-colors duration-200" href="#about">About</a>
-<a class="text-text-secondary dark:text-text-secondary font-label-md text-label-md hover:text-text-primary dark:hover:text-text-primary transition-colors duration-200" href="#skills">Skills</a>
-<a class="text-text-secondary dark:text-text-secondary font-label-md text-label-md hover:text-text-primary dark:hover:text-text-primary transition-colors duration-200" href="#projects">Projects</a>
-<a class="text-text-secondary dark:text-text-secondary font-label-md text-label-md hover:text-text-primary dark:hover:text-text-primary transition-colors duration-200" href="#education">Education</a>
-<a class="text-text-secondary dark:text-text-secondary font-label-md text-label-md hover:text-text-primary dark:hover:text-text-primary transition-colors duration-200" href="#contact">Contact</a>
+<nav aria-label="Primary" class="hidden md:flex items-center gap-6">
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#home">Home</a>
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#about">About</a>
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#skills">Skills</a>
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#projects">Projects</a>
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#education">Education</a>
+<a class="nav-link text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors duration-200" href="#contact">Contact</a>
 </nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-3">
-<button aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-border-subtle bg-card-elevated flex items-center justify-center text-text-secondary hover:text-primary transition-colors duration-200" id="themeToggle">
-<span class="material-symbols-outlined text-[18px]">dark_mode</span>
-</button>
-<a class="btn-ghost px-3.5 py-1.5 rounded-lg text-text-primary font-label-md text-label-md flex items-center gap-1.5" href="#contact">
+<a class="btn-ghost px-3.5 py-1.5 rounded-lg text-text-primary font-label-md text-label-md hidden sm:flex items-center gap-1.5" data-config="cv" href="#" target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-[16px]">download</span>
 <span>Download CV</span>
 </a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="md:hidden w-10 h-10 rounded-lg border border-border-subtle bg-card-elevated flex items-center justify-center text-text-secondary hover:text-text-primary" id="menuBtn">
+<span class="material-symbols-outlined text-[22px]" id="menuIcon">menu</span>
+</button>
 </div>
 </div>
+<nav aria-label="Mobile" class="md:hidden border-t border-border-subtle bg-[#0D1117]/95 backdrop-blur-md" hidden id="mobileMenu">
+<div class="flex flex-col px-6 py-3 font-label-md text-label-md">
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#home">Home</a>
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#about">About</a>
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#skills">Skills</a>
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#projects">Projects</a>
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#education">Education</a>
+<a class="nav-link py-3 text-text-secondary hover:text-text-primary" href="#contact">Contact</a>
+<a class="mt-2 mb-1 btn-ghost px-4 py-3 rounded-lg text-text-primary flex items-center justify-center gap-2" data-config="cv" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]">download</span>Download CV</a>
+</div>
+</nav>
 </header>
 <main class="relative z-10 pt-24 px-4 sm:px-6 md:px-8 max-w-container-max mx-auto space-y-20 md:space-y-[96px]">
 <!-- 2. HERO SECTION (Bento Grid) -->
@@ -237,7 +268,7 @@
 <span>View My Projects</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
-<a class="btn-ghost px-5 py-3 rounded-lg text-text-primary font-label-md text-label-md font-medium flex items-center gap-2" href="#contact">
+<a class="btn-ghost px-5 py-3 rounded-lg text-text-primary font-label-md text-label-md font-medium flex items-center gap-2" data-config="cv" href="#" target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-[18px]">description</span>
 <span>Download CV</span>
 </a>
@@ -255,7 +286,7 @@
 <!-- Profile Card -->
 <div class="glass-panel p-6 flex items-center gap-5">
 <div class="relative w-20 h-20 rounded-2xl overflow-hidden border border-border-subtle flex-shrink-0 bg-card-elevated">
-<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a young Vietnamese male software engineer named Le Duc Chinh wearing minimalist dark apparel, set against a dark tech aesthetic backdrop with soft subtle violet-blue rim light, reflecting modern Linear developer style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxvbF7EoLUKW5yG8vYmnRSkRbWeTlfQwzizRLn7oX3-6YkHFQaoMHlarfijP6f9wwYbN93szn22l_TRmC0Kl79x2PohsY1R_sUvfB1B3_fcgaviUdJ1FHw2-NnNzfzqgPw7c4zxwK_COetwIX5s-UQPoW2sShN3CbLwddhGQt2wL2_HIezuxhgoOoZRFtvXnU3aHHn5SzLM_GCxrMUSz3qYsZu9PqVmoy1-CJHE7f9G2Pf21HpAShU"/>
+<img alt="Le Duc Chinh" class="w-full h-full object-cover" height="80" src="https://github.com/9hdzprovip.png?size=160" width="80"/>
 </div>
 <div class="space-y-2">
 <div>
@@ -267,10 +298,10 @@
 </div>
 <div class="flex items-center gap-2 pt-1">
 <a aria-label="GitHub Profile" class="w-8 h-8 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-text-primary hover:text-primary transition-colors" href="https://github.com/9hdzprovip" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">terminal</span>
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
 </a>
-<a aria-label="LinkedIn Profile" class="w-8 h-8 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-text-primary hover:text-primary transition-colors" href="https://linkedin.com" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">share</span>
+<a aria-label="LinkedIn Profile" class="w-8 h-8 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-text-primary hover:text-primary transition-colors" data-config="linkedin" href="#" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
 </a>
 </div>
 </div>
@@ -324,7 +355,7 @@
 </div>
 </section>
 <!-- 3. ABOUT SECTION (id="about") -->
-<section class="space-y-8 scroll-mt-24" id="about">
+<section class="space-y-8 scroll-mt-24 reveal" id="about">
 <div class="space-y-2">
 <span class="font-eyebrow text-eyebrow text-primary tracking-widest uppercase">01 / ABOUT ME</span>
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Building a strong foundation in backend engineering.</h2>
@@ -338,10 +369,10 @@
 <p>
             Through academic and personal projects, I have worked with Spring Boot, Spring Data JPA, Spring Security, JWT authentication, PostgreSQL, MySQL, RESTful APIs, and React. I am currently strengthening my knowledge of Docker, microservices, CI/CD, and event-driven systems.
           </p>
-<div class="pt-4 flex items-center gap-3">
+<div class="pt-4 flex flex-wrap items-center gap-3">
 <span class="font-code-xs text-code-xs text-text-muted uppercase">Academic Track:</span>
 <span class="chip font-code-xs text-code-xs text-primary">HUST School of ICT</span>
-<span class="chip font-code-xs text-code-xs text-status-available">Targeting 2024-2025 Placements</span>
+<span class="chip font-code-xs text-code-xs text-status-available">Open to Intern / Fresher roles</span>
 </div>
 </div>
 <!-- 3 Compact Stat Cards (4 cols stacked) -->
@@ -362,7 +393,7 @@
 </div>
 </section>
 <!-- 4. SKILLS SECTION (id="skills") -->
-<section class="space-y-8 scroll-mt-24" id="skills">
+<section class="space-y-8 scroll-mt-24 reveal" id="skills">
 <div class="space-y-2">
 <span class="font-eyebrow text-eyebrow text-primary tracking-widest uppercase">02 / TECH STACK</span>
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Technologies I use to build applications.</h2>
@@ -494,7 +525,7 @@
 </div>
 </section>
 <!-- 5. PROJECTS SECTION (id="projects") -->
-<section class="space-y-12 scroll-mt-24" id="projects">
+<section class="space-y-12 scroll-mt-24 reveal" id="projects">
 <div class="space-y-2">
 <span class="font-eyebrow text-eyebrow text-primary tracking-widest uppercase">03 / FEATURED PROJECTS</span>
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Selected projects and technical decisions.</h2>
@@ -559,15 +590,15 @@
 </div>
 <!-- Action buttons -->
 <div class="flex flex-wrap items-center gap-3 pt-4">
-<a class="btn-gradient px-4 py-2 rounded-lg text-white font-label-md text-label-md flex items-center gap-1.5" href="#projects">
-<span class="material-symbols-outlined text-[16px]">visibility</span>
-<span>Live Demo</span>
+<a class="btn-gradient px-4 py-2 rounded-lg text-white font-label-md text-label-md flex items-center gap-1.5" href="https://github.com/9hdzprovip/Employee-management-system-back-end" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+<span>Backend repo</span>
 </a>
-<a class="btn-ghost px-4 py-2 rounded-lg text-text-primary font-label-md text-label-md flex items-center gap-1.5" href="https://github.com/9hdzprovip" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[16px]">code</span>
-<span>GitHub</span>
+<a class="btn-ghost px-4 py-2 rounded-lg text-text-primary font-label-md text-label-md flex items-center gap-1.5" href="https://github.com/9hdzprovip/Employee_management-system-front-end" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+<span>Frontend repo</span>
 </a>
-<button class="btn-ghost px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5" onclick="alert('Case study documentation: Architectural specs, ER diagrams, and DB indexes configured in Spring Data JPA.')">
+<button class="btn-ghost px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5" data-case="employee" type="button">
 <span class="material-symbols-outlined text-[16px]">article</span>
 <span>View Case Study</span>
 </button>
@@ -575,21 +606,15 @@
 </div>
 <!-- Screenshot Mockup Preview (5 cols) -->
 <div class="lg:col-span-5">
-<div class="rounded-xl overflow-hidden border border-border-subtle bg-card-elevated shadow-2xl relative group">
-<!-- Mock browser header -->
-<div class="bg-surface-container-high/60 px-4 py-2.5 border-b border-border-subtle flex items-center justify-between">
-<div class="flex items-center gap-1.5">
-<span class="w-2.5 h-2.5 rounded-full bg-error-container/60"></span>
-<span class="w-2.5 h-2.5 rounded-full bg-secondary-container/60"></span>
-<span class="w-2.5 h-2.5 rounded-full bg-status-available/60"></span>
-</div>
-<span class="font-code-xs text-code-xs text-text-muted">localhost:3000/dashboard</span>
-<span class="material-symbols-outlined text-[14px] text-text-muted">lock</span>
-</div>
-<div class="aspect-[16/10] relative overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dark high-fidelity SaaS dashboard mockup for an Enterprise Employee Management System showing analytics cards, payroll metrics, tabular attendance records, and deep navy-blue charts illuminated with subtle violet accents in a clean dark UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJMUWVYX9i5EfyCjeKBpXjQRJ-9rHFzhVR3fZ5YBWXf6dFVD-OF-SaHWnHStBwlWtyYjsO7NXwM1AO3I2Y5BwzB8Zuw2-fVrRt6eeXmARhlqAOeQiqWUm64MOu34tgW5hrCaVz6DcnVTYYXZFRNA24aGD5v5Pl6eAeJaglekjw_OE2OS8OuSKKyt0cA__hfzum1zDJA0FsKP4pABARMvTKF1yj-NtW1LaWMS-WAM66vk9eHIWkaCQ3"/>
-<div class="absolute inset-0 bg-gradient-to-t from-card-bg via-transparent to-transparent opacity-40"></div>
-</div>
+<div class="rounded-xl border border-border-subtle bg-[#0D1117] p-5 sm:p-6">
+<div class="flex items-center justify-between mb-4"><span class="font-code-xs text-code-xs text-text-muted uppercase tracking-wider">System architecture</span><span class="font-code-xs text-code-xs text-primary">employee-mgmt</span></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">React SPA</span><span class="font-code-xs text-code-xs text-text-muted text-right">Protected routes · Admin / Employee</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">REST API</span><span class="font-code-xs text-code-xs text-text-muted text-right">JSON · JWT bearer token</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">Spring Boot</span><span class="font-code-xs text-code-xs text-text-muted text-right">Security · Service layer · JPA</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">PostgreSQL</span><span class="font-code-xs text-code-xs text-text-muted text-right">Employees · Attendance · Payroll</span></div>
 </div>
 </div>
 </div>
@@ -599,21 +624,15 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 <!-- Screenshot Mockup Preview (5 cols) - First on desktop -->
 <div class="lg:col-span-5 order-2 lg:order-1">
-<div class="rounded-xl overflow-hidden border border-border-subtle bg-card-elevated shadow-2xl relative group">
-<!-- Mock browser header -->
-<div class="bg-surface-container-high/60 px-4 py-2.5 border-b border-border-subtle flex items-center justify-between">
-<div class="flex items-center gap-1.5">
-<span class="w-2.5 h-2.5 rounded-full bg-error-container/60"></span>
-<span class="w-2.5 h-2.5 rounded-full bg-secondary-container/60"></span>
-<span class="w-2.5 h-2.5 rounded-full bg-status-available/60"></span>
-</div>
-<span class="font-code-xs text-code-xs text-text-muted">library.internal:8080</span>
-<span class="material-symbols-outlined text-[14px] text-text-muted">lock</span>
-</div>
-<div class="aspect-[16/10] relative overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern dark-themed digital library catalog interface displaying book availability statuses, catalog filters, user borrow logs, and transactional overdue badges rendered with refined typography and micro-borders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt8zLQo4VcP8i4fH7Jo4MuPxVhePe1k4E0cR0yKLbLOUi2WIYrVSxS2A2r2-yGRRxvel1H6Hb_t_q8xCpG8YXmLlH0ZbwAUq4KeG3of171U14JXbzpWUrY-1i9TwOm-Xcx8H3VZNuWSShtvOHIA9APxOgAb0LJIyLa2q1pIw8sBieu5vsfSZKkv_y27IirQ4QnCx3vQfS6F3BdJRdph88j3aMASP-Vk5yw9tNgql6nhBzWQwumiOwa"/>
-<div class="absolute inset-0 bg-gradient-to-t from-card-bg via-transparent to-transparent opacity-40"></div>
-</div>
+<div class="rounded-xl border border-border-subtle bg-[#0D1117] p-5 sm:p-6">
+<div class="flex items-center justify-between mb-4"><span class="font-code-xs text-code-xs text-text-muted uppercase tracking-wider">System architecture</span><span class="font-code-xs text-code-xs text-primary">library-mgmt</span></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">React SPA</span><span class="font-code-xs text-code-xs text-text-muted text-right">Catalog · Borrowing · Admin</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">REST API</span><span class="font-code-xs text-code-xs text-text-muted text-right">JSON · JWT bearer token</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">Spring Boot</span><span class="font-code-xs text-code-xs text-text-muted text-right">Stateless Security · Business rules</span></div>
+<div class="arch-arrow"></div>
+<div class="arch-node flex items-center justify-between gap-3"><span class="font-code-sm text-code-sm text-text-primary">PostgreSQL</span><span class="font-code-xs text-code-xs text-text-muted text-right">Books · Borrow records · Users</span></div>
 </div>
 </div>
 <!-- Content area (7 cols) - Second on desktop -->
@@ -672,15 +691,11 @@
 </div>
 <!-- Action buttons -->
 <div class="flex flex-wrap items-center gap-3 pt-4">
-<a class="btn-gradient px-4 py-2 rounded-lg text-white font-label-md text-label-md flex items-center gap-1.5" href="#projects">
-<span class="material-symbols-outlined text-[16px]">visibility</span>
-<span>Live Demo</span>
-</a>
-<a class="btn-ghost px-4 py-2 rounded-lg text-text-primary font-label-md text-label-md flex items-center gap-1.5" href="https://github.com/9hdzprovip" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[16px]">code</span>
+<a class="btn-gradient px-4 py-2 rounded-lg text-white font-label-md text-label-md flex items-center gap-1.5" data-config="libraryRepo" href="#" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
 <span>GitHub</span>
 </a>
-<button class="btn-ghost px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5" onclick="alert('Case study documentation: Concurrency guards on inventory reservations and transactional state transitions in PostgreSQL.')">
+<button class="btn-ghost px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-1.5" data-case="library" type="button">
 <span class="material-symbols-outlined text-[16px]">article</span>
 <span>View Case Study</span>
 </button>
@@ -688,9 +703,38 @@
 </div>
 </div>
 </div>
+<div class="space-y-4">
+<span class="font-code-xs text-code-xs text-text-muted uppercase tracking-wider block">More projects</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<a class="glass-panel p-6 flex flex-col gap-3 group" href="https://github.com/9hdzprovip/CNPM_quanlydancu" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between"><span class="font-code-xs text-code-xs text-text-muted">03</span><span class="chip font-code-xs text-code-xs text-text-secondary">Course project</span></div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">Residential Management</h4>
+<p class="font-body-sm text-body-sm text-text-secondary flex-1">Software Engineering course project for managing households and residents in a residential area.</p>
+<span class="font-code-xs text-code-xs text-primary flex items-center gap-1.5"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg> View repository →</span>
+</a>
+<a class="glass-panel p-6 flex flex-col gap-3 group" href="https://github.com/9hdzprovip/OOP-Game_Bros-Crush" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between"><span class="font-code-xs text-code-xs text-text-muted">04</span><span class="chip font-code-xs text-code-xs text-text-secondary">Course project</span></div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">Bros||Crush</h4>
+<p class="font-body-sm text-body-sm text-text-secondary flex-1">Game built for the Object-Oriented Programming course, applying OOP design principles.</p>
+<span class="font-code-xs text-code-xs text-primary flex items-center gap-1.5"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg> View repository →</span>
+</a>
+<a class="glass-panel p-6 flex flex-col gap-3 group" href="https://github.com/bonxom/Pose_Tracking" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between"><span class="font-code-xs text-code-xs text-text-muted">05</span><span class="chip font-code-xs text-code-xs text-text-secondary">Team project</span></div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">Pose Tracking</h4>
+<p class="font-body-sm text-body-sm text-text-secondary flex-1">Team project on tracking human body pose.</p>
+<span class="font-code-xs text-code-xs text-primary flex items-center gap-1.5"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg> View repository →</span>
+</a>
+<a class="glass-panel p-6 flex flex-col gap-3 group" href="https://github.com/ArrayPowerPlay/ML_project" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between"><span class="font-code-xs text-code-xs text-text-muted">06</span><span class="chip font-code-xs text-code-xs text-text-secondary">Team project</span></div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">ML Project</h4>
+<p class="font-body-sm text-body-sm text-text-secondary flex-1">Team machine learning project.</p>
+<span class="font-code-xs text-code-xs text-primary flex items-center gap-1.5"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg> View repository →</span>
+</a>
+</div>
+</div>
 </section>
 <!-- 6. EDUCATION & ACHIEVEMENTS (id="education") -->
-<section class="space-y-8 scroll-mt-24" id="education">
+<section class="space-y-8 scroll-mt-24 reveal" id="education">
 <div class="space-y-2">
 <span class="font-eyebrow text-eyebrow text-primary tracking-widest uppercase">04 / EDUCATION &amp; ACHIEVEMENTS</span>
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Academic background and milestones.</h2>
@@ -794,7 +838,7 @@
 </div>
 </section>
 <!-- 7. CONTACT SECTION (id="contact") -->
-<section class="space-y-8 scroll-mt-24 pb-12" id="contact">
+<section class="space-y-8 scroll-mt-24 pb-12 reveal" id="contact">
 <div class="space-y-2">
 <span class="font-eyebrow text-eyebrow text-primary tracking-widest uppercase">05 / CONTACT</span>
 <h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Let's build something meaningful together.</h2>
@@ -807,16 +851,16 @@
             </p>
 <!-- CTAs -->
 <div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="btn-gradient px-6 py-3 rounded-lg text-white font-label-md text-label-md font-medium flex items-center gap-2" href="mailto:contact@bbroot.com">
+<a class="btn-gradient px-6 py-3 rounded-lg text-white font-label-md text-label-md font-medium flex items-center gap-2" data-config="email" href="#">
 <span class="material-symbols-outlined text-[18px]">mail</span>
 <span>Send an Email</span>
 </a>
-<a class="btn-ghost px-5 py-3 rounded-lg text-text-primary font-label-md text-label-md font-medium flex items-center gap-2" href="https://linkedin.com" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">share</span>
+<a class="btn-ghost px-5 py-3 rounded-lg text-text-primary font-label-md text-label-md font-medium flex items-center gap-2" data-config="linkedin" href="#" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
 <span>LinkedIn</span>
 </a>
 <a class="btn-ghost px-5 py-3 rounded-lg text-text-primary font-label-md text-label-md font-medium flex items-center gap-2" href="https://github.com/9hdzprovip" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">terminal</span>
+<svg aria-hidden="true" viewBox="0 0 24 24" class="w-[16px] h-[16px]" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
 <span>GitHub</span>
 </a>
 </div>
@@ -824,16 +868,16 @@
 <!-- Info items (4 cols) -->
 <div class="lg:col-span-4 glass-panel p-6 space-y-4 bg-card-elevated border-border-subtle">
 <!-- Email -->
-<div class="space-y-1">
+<div class="space-y-1" data-config="emailRow">
 <span class="font-code-xs text-code-xs text-text-muted uppercase">Email Address</span>
 <div class="flex items-center justify-between gap-2">
-<span class="font-code-sm text-code-sm text-text-primary truncate" id="emailText">[YOUR EMAIL]</span>
-<button class="w-8 h-8 rounded-md bg-white/5 hover:bg-white/10 flex items-center justify-center text-text-secondary transition-colors" id="copyBtn" onclick="navigator.clipboard.writeText(document.getElementById('emailText').innerText); this.innerHTML='&lt;span class=\'material-symbols-outlined text-[16px] text-status-available\'&gt;done&lt;/span&gt;';" title="Copy email">
+<span class="font-code-sm text-code-sm text-text-primary truncate" id="emailText"></span>
+<button aria-label="Copy email address" class="w-8 h-8 rounded-md bg-white/5 hover:bg-white/10 flex items-center justify-center text-text-secondary transition-colors" id="copyBtn" type="button">
 <span class="material-symbols-outlined text-[16px]">content_copy</span>
 </button>
 </div>
 </div>
-<div class="border-t border-border-subtle pt-3 space-y-1">
+<div class="border-t border-border-subtle pt-3 space-y-1" id="locationRow">
 <span class="font-code-xs text-code-xs text-text-muted uppercase">Location</span>
 <p class="font-code-sm text-code-sm text-text-primary">Hanoi, Vietnam</p>
 </div>
@@ -853,7 +897,7 @@
 <footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-border-subtle dark:border-border-subtle mt-20">
 <div class="flex flex-col sm:flex-row justify-between items-center w-full px-6 md:px-8 max-w-container-max mx-auto py-8 gap-4 font-body-sm text-body-sm">
 <div class="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-4 text-center sm:text-left">
-<span class="text-text-muted dark:text-text-muted font-code-xs text-code-xs">© 2026 Le Duc Chinh. Built with React and Vite.</span>
+<span class="text-text-muted dark:text-text-muted font-code-xs text-code-xs">© 2026 Le Duc Chinh. Built with HTML &amp; Tailwind CSS.</span>
 <span class="hidden sm:inline-block text-border-subtle">•</span>
 <span class="text-text-secondary font-body-sm text-body-sm">Designed for clarity. Built for growth.</span>
 </div>
@@ -865,11 +909,141 @@
 </div>
 </div>
 </footer>
-<!-- Micro-interaction JS for Theme and Copy -->
+<!-- Case study modal -->
+<div aria-labelledby="caseTitle" aria-modal="true" class="fixed inset-0 z-[60] flex items-center justify-center p-4" hidden id="caseModal" role="dialog">
+<div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-close=""></div>
+<div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-border-subtle bg-[#111722] p-6 sm:p-8 shadow-2xl">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<span class="font-code-xs text-code-xs text-primary uppercase tracking-wider">Case study</span>
+<h3 class="font-headline-md text-headline-md text-text-primary mt-1" id="caseTitle"></h3>
+</div>
+<button aria-label="Close case study" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-text-secondary" data-close="" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button>
+</div>
+<div class="space-y-5 font-body-md text-body-md text-text-secondary" id="caseBody"></div>
+</div>
+</div>
+<!-- Toast -->
+<div aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] px-4 py-2 rounded-lg bg-[#151C29] border border-border-subtle text-text-primary font-label-md text-label-md opacity-0 pointer-events-none transition-opacity duration-200" id="toast"></div>
 <script>
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
+    /* ====== EDIT YOUR INFO HERE ======
+       Leave a value empty ("") to hide the related button. */
+    const SITE_CONFIG = {
+      email: "",        // e.g. "chinh@example.com"
+      linkedin: "",     // e.g. "https://www.linkedin.com/in/your-handle"
+      cv: "",           // e.g. "cv/LeDucChinh_CV.pdf" (upload the PDF into the repo)
+      libraryRepo: ""   // GitHub URL of the Library Management System
+    };
+
+    // Apply config: set links or hide elements
+    document.querySelectorAll('[data-config]').forEach((el) => {
+      const key = el.dataset.config;
+      if (key === 'emailRow') { if (!SITE_CONFIG.email) el.hidden = true; return; }
+      const val = SITE_CONFIG[key];
+      if (!val) { el.style.display = 'none'; return; }
+      el.href = key === 'email' ? 'mailto:' + val : val;
+    });
+    const emailText = document.getElementById('emailText');
+    if (SITE_CONFIG.email) emailText.textContent = SITE_CONFIG.email;
+    else document.getElementById('locationRow').classList.remove('border-t', 'pt-3');
+
+    // Toast + copy email
+    const toast = document.getElementById('toast');
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      clearTimeout(showToast.t);
+      showToast.t = setTimeout(() => (toast.style.opacity = '0'), 1600);
+    }
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(SITE_CONFIG.email); showToast('Copied!'); }
+      catch { showToast(SITE_CONFIG.email); }
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    function setMenu(open) {
+      mobileMenu.hidden = !open;
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuIcon.textContent = open ? 'close' : 'menu';
+    }
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.hidden));
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+    // Active section highlight
+    const links = document.querySelectorAll('.nav-link');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach((sec) => sectionObserver.observe(sec));
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    // Case study modal
+    const CASES = {
+      employee: {
+        title: 'Employee Management System',
+        sections: [
+          ['Overview', 'A role-based platform for managing employee records, departments, positions, monthly attendance, leave requests and payroll. Admins manage the organisation; employees view their own data and submit leave requests.'],
+          ['My contribution', 'Requirements analysis, database design, backend API development, authentication, business logic, and frontend integration.'],
+          ['Technical challenges', 'Designing entity relationships, implementing role-based access, validating business rules such as leave approval and payroll calculation, and importing attendance data from Excel reliably.'],
+          ['What I learned', 'Layered architecture, RESTful API design, Spring Security with JWT, relational database modelling, debugging, and full-stack integration.']
+        ]
+      },
+      library: {
+        title: 'Library Management System',
+        sections: [
+          ['Overview', 'A full-stack application for managing books, authors, categories, users and borrow records, with Admin and User roles.'],
+          ['My contribution', 'Requirements analysis, database design, backend API development, authentication, business logic, and frontend integration.'],
+          ['Technical challenges', 'Keeping book availability consistent across borrow and return operations, processing overdue records, and enforcing role-based access with stateless Spring Security.'],
+          ['What I learned', 'Layered architecture, RESTful API design, Spring Security, relational database modelling, validation, and full-stack integration.']
+        ]
+      }
+    };
+    const modal = document.getElementById('caseModal');
+    let lastFocus = null;
+    function openCase(key) {
+      const c = CASES[key];
+      document.getElementById('caseTitle').textContent = c.title;
+      const body = document.getElementById('caseBody');
+      body.innerHTML = '';
+      c.sections.forEach(([h, t]) => {
+        const wrap = document.createElement('div');
+        const hd = document.createElement('h4');
+        hd.className = 'font-headline-sm text-headline-sm text-text-primary mb-1';
+        hd.textContent = h;
+        const p = document.createElement('p');
+        p.textContent = t;
+        wrap.append(hd, p);
+        body.append(wrap);
+      });
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('button[data-close]').focus();
+    }
+    function closeCase() {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    document.querySelectorAll('[data-case]').forEach((b) => b.addEventListener('click', () => openCase(b.dataset.case)));
+    modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', closeCase));
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (!modal.hidden) closeCase();
+      else if (!mobileMenu.hidden) setMenu(false);
     });
   </script>
+
 </body></html>
